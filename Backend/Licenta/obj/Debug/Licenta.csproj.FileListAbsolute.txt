@@ -1,0 +1,7 @@
+C:\Users\moisu\source\repos\Licenta\Licenta\bin\Debug\Licenta.exe.config
+C:\Users\moisu\source\repos\Licenta\Licenta\bin\Debug\Licenta.exe
+C:\Users\moisu\source\repos\Licenta\Licenta\bin\Debug\Licenta.pdb
+C:\Users\moisu\source\repos\Licenta\Licenta\obj\Debug\Licenta.csprojAssemblyReference.cache
+C:\Users\moisu\source\repos\Licenta\Licenta\obj\Debug\Licenta.csproj.CoreCompileInputs.cache
+C:\Users\moisu\source\repos\Licenta\Licenta\obj\Debug\Licenta.exe
+C:\Users\moisu\source\repos\Licenta\Licenta\obj\Debug\Licenta.pdb

@@ -1,0 +1,23 @@
+<img src="../../assets/images/CRYPTONOS.png" alt="Default Image" class="logo">
+<div class="dashboard">
+  <div class="page-container">
+      <mat-tab-group (selectedTabChange)="onContentTabChanged($event)">
+          <mat-tab>
+              <ng-template mat-tab-label>
+                  <div [ngClass]="{'no-focus': selectedTab != 0}">Hide</div>
+                </ng-template>
+              <div class="content">
+                <app-encryption-page></app-encryption-page>
+              </div>
+          </mat-tab>
+          <mat-tab>
+              <ng-template mat-tab-label>
+                <div [ngClass]="{'no-focus': selectedTab != 1, 'extension': true}">Extract</div>
+              </ng-template>
+              <div class="content">
+                <app-decryption-page></app-decryption-page>
+              </div>
+          </mat-tab>
+      </mat-tab-group>
+  </div>
+</div>

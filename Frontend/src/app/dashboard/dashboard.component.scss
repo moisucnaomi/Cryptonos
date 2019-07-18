@@ -1,0 +1,103 @@
+@import '../../assets/scss/variables';
+
+.dashboard {
+    position: relative;
+    .header {
+        width: 100%;
+        height: 120px;
+        background-image: linear-gradient(to right, $brand-dark ,$brand-light);
+    }
+    .mat-tab-header {
+        border: none;
+    }
+    .page-container {
+        margin: 50px;
+
+        .mat-ripple-element {
+            display: none;
+        }
+
+        .mat-tab-group {
+            font-family: monospace;
+        }
+
+        .mat-tab-label {
+            padding: 0;
+            background-color: $brand-darker;
+            color: white;
+            min-width: 220px;
+            max-width: 220px;
+            opacity: 1;
+            overflow: visible;
+            font-weight: 700;
+            font-size: 22px;
+            font-family: monospace;
+
+            &:focus {
+                background-color: $brand-darker;
+            }
+
+            .no-focus {
+                background: $brand-dark-intermediar;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                line-height: 48px;
+            }
+
+            .extension {
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: -75px;
+                    top: 0;
+                    bottom: 0;
+                    border: solid $brand-darker 80px;
+                    border-bottom: 0;
+                    border-right: 0;
+                    border-top-color: transparent;
+                    border-left-width: 75px;
+                }
+                &.no-focus:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: -75px;
+                    top: 0;
+                    bottom: 0;
+                    border: solid $brand-dark-intermediar 80px;
+                    border-bottom: 0;
+                    border-right: 0;
+                    border-top-color: transparent;
+                    border-left-width: 75px;
+                }
+            }
+        }
+
+        .mat-ink-bar {
+            display: none;
+        }
+
+        .mat-tab-body-wrapper {
+            background-color: $brand-darker;
+            min-height: 84vh;
+
+        }
+
+        .content {
+            height: 100%;
+        }
+    }
+}
+
+.logo {
+    width: 235px;
+    height: 230px;
+    position: absolute;
+    right: 42px;
+    top: -36px;
+    z-index: 1;
+}
+
+    

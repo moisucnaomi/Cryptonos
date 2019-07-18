@@ -1,0 +1,33 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'assets/scss/variables';
+
+
+body {
+    background-image: linear-gradient(to right, $brand-light ,$brand-dark);
+    margin: 0;
+    font-family: monospace;
+}
+
+::-webkit-scrollbar {
+    background-color: $brand-darker;
+    width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $brand-dark;
+    border-right: solid 2.5px $brand-darker;
+    border-left: solid 2.5px $brand-darker;
+}
+
+body { margin: 0; font-family: monospace; }
+
+snack-bar-container {
+    &.mat-snack-bar-container {
+        background-color: $brand-dark;
+    }
+    &.mat-snack-bar-container.mat-snack-bar-center {
+        margin-top: 5px;
+    }
+}
+

@@ -1,0 +1,54 @@
+<div class="page">
+  <div class="container">
+    <div class="col-2">
+    <div class="advanced">
+        <mat-checkbox [color]="red" [(ngModel)]="advanced" (click)="advancedSelected()">Advanced</mat-checkbox>
+        <div *ngIf="advanced" class="radio-buttons">
+          <div class="single-button" *ngFor="let bit of bits">
+            <mat-checkbox [(ngModel)]="selectedBits[bit]">
+                {{bit}}
+            </mat-checkbox>
+          </div>
+          <mat-checkbox class="encrypt" [(ngModel)]="decrypt">Decrypt</mat-checkbox>
+        </div>
+      </div>
+      <div class="buttons-wrapper">
+        <label for="input-image-id" class="md-button md-raised md-primary">Choose Image</label>
+        <input (change)="uploadImage($event.target.files)" class="ng-hide input-file" id="input-image-id" type="file" accept=".jpg, .jpeg, .png"/>
+      </div>
+      <img #imageView *ngIf="imageFile" src="{{imageFile}}" alt="Default Image">
+      <textarea *ngIf="decrypt" matInput placeholder="Key..." [formControl]="keyControl" spellcheck="false"></textarea>
+    </div>
+    <div class="col-3">
+      <div class="icon-container">
+        <span class="label" (click)="action()">Action</span>
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" (click)="action()"
+          class="svg-inline--fa fa-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512">
+          <path
+            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z">
+          </path>
+        </svg>
+      </div>
+    </div>
+    <div *ngIf="isLoading" class="col-4 loader">
+        <mat-spinner [strokeWidth]="5"></mat-spinner>
+    </div>
+    <div *ngIf="!isLoading" class="col-4" [ngClass]="{'hide': !showResult}">
+      <a [href]="fileUrl" download="file.txt" class="md-button md-raised md-primary">Download</a>
+      <div class="message">
+        {{message}}
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="key" [ngClass]="{'hide': tru}">
+    </div>
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="info-circle" (click)="openDialog()"
+      class="svg-inline--fa fa-info-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path
+        d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z">
+      </path>
+    </svg>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+@import '../encryption-page/encryption-page.component.scss';
+
+.container {
+    .col-2 {
+        align-items: baseline;
+        .input-file {
+            left: 47px;
+        }
+        img {
+            margin-bottom: 10px;
+            max-height: 507px;
+            width: auto;
+        }
+        textarea {
+            resize: none;
+            width: calc(100% - 29px);
+            height: 100%;
+            border-radius: 3px;
+            padding: 9px;
+            background-color: white;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    .col-4 {
+        .message {
+            height: 100%;
+            width: calc(100% - 18px);
+            max-height: 551px;
+            border-radius: 3px;
+            padding: 9px;
+            background-color: white;
+            overflow: auto;
+            word-break: break-word;
+        }
+    }
+}

@@ -1,0 +1,211 @@
+@import '../../assets/scss/variables';
+%column {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+}
+%input-file {
+    position: absolute;
+    top: 5px;
+    left: 47px;
+    color: white;
+    z-index: -1;
+    font-family: monospace;
+    font-size: 13px;
+    &:focus {
+        outline: none;
+    }
+}
+.advanced {
+    color: white;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    display: flex;
+    .radio-buttons {
+        display: flex;
+        .single-button {
+            margin-left: 30px;
+            .mat-checkbox-frame, .mat-checkbox-checked .mat-checkbox-frame, .mat-checkbox-checked .mat-checkbox-background {
+                border-radius: 50px;
+            }
+        }
+        .encrypt {
+            margin-left: 30px;
+        }
+    }
+    .mat-checkbox-layout .mat-checkbox-label {
+        font-family: monospace !important;
+        font-size: 14px;
+    }
+    .mat-checkbox-frame {
+        border-color: white;
+        width: 14px;
+        height: 14px;
+        border-width: 1px;
+    }
+    .mat-checkbox-inner-container {
+        width: 14px;
+        height: 14px;
+    }
+    .mat-checkbox-checked {
+        .mat-checkbox-frame {
+            border-color: $brand-dark;
+        }
+        .mat-checkbox-background {
+            background-color: $brand-dark;
+        }
+    }
+}
+.container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    padding: 20px;
+    padding-top: 7%;
+    color: $brand-darker;
+
+    .md-button.md-raised.md-primary {
+        background-color: white;
+        width: 133px;
+        height: 33px;
+        text-align: center;
+        line-height: 32px;
+        margin-bottom: 10px;
+        align-self: start;
+        font-weight: bolder;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 700;
+        color: $brand-darker;
+        text-decoration: none;
+    }
+
+    img {
+        width: calc(100% - 9px);
+        max-height: 540px;
+        align-self: start;
+    }
+    
+    .col-1 {
+        @extend %column;
+        textarea {
+            resize: none;
+            width: calc(100% - 9px);
+            height: 100%;
+            border-radius: 3px;
+            margin-left: 9px;
+            padding: 9px;
+            background-color: white;
+            &:focus {
+                outline: none;
+            }
+        }
+        .input-file {
+            @extend %input-file;
+        }
+    }
+    .col-2 {
+        @extend %column;
+        .input-file {
+            @extend %input-file;
+            left: 185px;
+        }
+        .buttons-wrapper {
+            display: flex;
+            width: 100%;
+        }
+        .md-button.md-raised.md-primary + .md-button.md-raised.md-primary {
+            margin-left: 5px;
+        }
+    }
+    .col-3 {
+        @extend %column;
+        flex: 0.5;
+        display: flex;
+        align-items: inherit;
+        justify-content: center;
+        .icon-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            &.plus {
+                margin-left: 11px;
+                svg {
+                    cursor: auto;
+                }
+            }
+        }
+        .label {
+            position: absolute;
+            top: 61px;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        svg{
+            width: 127px;
+            height: 146px;
+            fill: white;
+            cursor: pointer;
+        }
+    }
+    .col-4 {
+        @extend %column;      
+        &.loader {
+            justify-content: center;
+            .mat-progress-spinner circle, .mat-spinner circle {
+                stroke: white;
+            }
+        } 
+        .statistics {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            position: absolute;
+            bottom: -27px;
+            left: 0;
+            width: calc(100% - 9px);
+        }
+    }
+}
+.key {
+    color: white;
+    padding: 20px;
+    margin-top: 10px;
+    align-self: end;
+    display: flex;
+    flex-flow: column;
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: ultra-expanded;
+    font-family: monospace;
+}
+.page {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    svg {
+        width: 22px;
+        height: 22px;
+        fill:white;
+        align-self: flex-end;
+        padding: 20px;
+        cursor: pointer;
+        margin-right: 9px;
+    }
+}
+
+.hide {
+    visibility: hidden;
+}
